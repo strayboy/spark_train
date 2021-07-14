@@ -1,0 +1,2 @@
+type=command
+command=/home/hadoop/app/hadoop-2.6.0-cdh5.7.0/bin/hadoop jar /home/hadoop/app/hadoop-2.6.0-cdh5.7.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0-cdh5.7.0.jar wordcount /hello.txt /az/wc

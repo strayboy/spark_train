@@ -1,0 +1,7 @@
+history server:
+    $SPARK_HOME/conf/spark-default.conf
+    spark.eventLog.enabled          true
+    spark.eventLog.dir              hdfs://hadoop000:8020/directory
+
+$SPARK_HOME/conf/spark-env.sh
+    SPARK_HISTORY_OPTS="-Dspark.history.fs.logDirectory=hdfs://hadoop000:8020/directory"

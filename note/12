@@ -1,0 +1,20 @@
+azkaban 进阶
+
+server mode 部署
+1）、create database azkaban;
+2）、CREATE USER 'azkaban'@'%' IDENTIFIED BY 'azkaban';
+3）、GRANT SELECT,INSERT,UPDATE,DELETE ON azkaban.* to 'azkaban'@'%' WITH GRANT OPTION;
+4)、flush privileges;
+5)、source /home/hadoop/source/azkaban-3.40.0/azkaban-db/build/install/azkaban-db/create-all-sql-0.1.0-SNAPSHOT.sql
+
+
+Azkaban 出了webUI，提供了AJAX的API请求
+    curl -k -X POST --data "action=login&username=azkaban&password=azkaban" http://hadoop000:8081
+
+    curl -k -X POST --data "session.id=96217e47-3922-4f9a-8cb9-a7a32255abbc&name=ajaxProject&description=ProjectAjax" http://hadoop000:8081/manager?action=create
+
+    curl -k --get --data "session.id=96217e47-3922-4f9a-8cb9-a7a32255abbc&delete=true&project=ajaxProject" http://hadoop000:8081/manager
+
+    curl -k --get --data "session.id=96217e47-3922-4f9a-8cb9-a7a32255abbc&ajax=fetchprojectflows&project=dependency" http://hadoop000:8081/manager
+
+    curl -k --get --data "session.id=96217e47-3922-4f9a-8cb9-a7a32255abbc&ajax=fetchflowgraph&project=dependency&flow=bar" http://hadoop000:8081/manager

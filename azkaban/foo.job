@@ -1,0 +1,2 @@
+type=command
+command=echo "This is an echoed text."

@@ -1,0 +1,2 @@
+type=command
+command=/home/hadoop/app/apache-hive-1.2.2-bin/bin/hive -f 'test.sql'

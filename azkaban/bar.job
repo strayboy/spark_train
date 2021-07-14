@@ -1,0 +1,3 @@
+type=command
+dependencies=foo
+command=echo "This is an echoed bar text."
